@@ -1,0 +1,23 @@
+class Solution {
+    //Function to reverse every sub-array group of size k.
+    void reverseInGroups(ArrayList<Integer> arr, int n, int k) {
+        // code here
+        for(int i=0;i<n;i=i+k){
+            if(i+k<n){
+                sol(arr,i,i+k-1);
+            }
+            else{
+                sol(arr,i,n-1);
+            }
+        }
+    }
+    public void sol(ArrayList<Integer> arr,int low,int high){
+        while(low<high){
+            int temp=arr.get(low);
+            arr.set(low,arr.get(high));
+            arr.set(high,temp);
+            low++;
+            high--;
+        }
+    }
+}
