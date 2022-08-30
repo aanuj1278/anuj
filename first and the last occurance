@@ -1,0 +1,33 @@
+
+class GFG
+{
+    ArrayList<Long> find(long arr[], int n, int x)
+    {
+        // code here
+        ArrayList<Long> al=new ArrayList<Long>();
+   long a1=-1;
+    long a2=-1;
+    for(int i=0;i<n;i++){
+        if(arr[i]==x){
+            a1=i;
+            al.add(a1);
+            break;
+        }
+    }
+    for(int i=n-1;i>=0;i--){
+        if(arr[i]==x){
+            a2=i;
+            al.add(a2);
+            break;
+        }
+    }
+    if(al.size()!=0){
+            return al;   
+    }
+    else{
+        al.add(a1);
+        al.add(a2);
+        return al;
+    }
+    }
+}
