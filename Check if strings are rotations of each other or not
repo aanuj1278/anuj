@@ -1,0 +1,30 @@
+class Solution
+{
+    //Function to check if two strings are rotations of each other or not.
+    public static boolean areRotations(String s1, String s2 )
+    {
+        // Your code here
+        if(s1.length() != s2.length()){
+            return false;
+        }
+        int size=s1.length();
+        char[] arr=new char[size];
+        for(int i=0;i<size;i++){
+            arr[i]=s1.charAt(i);
+        }
+        int a=0;
+        while(a<size){
+            char temp=arr[size-1];
+            for(int i=size-1;i>0;i--){
+                arr[i]=arr[i-1];
+            }
+            arr[0]=temp;
+            String s=String.valueOf(arr);
+            if(s2.equals(s)){
+                return true;
+            }
+            a++;
+        }
+        return false;
+    }
+}
