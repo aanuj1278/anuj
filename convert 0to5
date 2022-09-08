@@ -1,0 +1,19 @@
+
+class GfG {
+    int convertfive(int num) {
+        String  number=Integer.toString(num);
+        int length=number.length();
+        char[] arr=new char[length];
+        for(int i=0;i<length;i++){
+            arr[i]=number.charAt(i);
+            
+        }
+        for(int i=0;i<length;i++){
+            if(arr[i]=='0'){
+                arr[i]='5';
+            }
+        }
+        int answer = Integer.parseInt(String.valueOf(arr));
+        return answer; 
+    }
+}
