@@ -1,0 +1,21 @@
+/*Complete The Function Below*/
+class Tree
+{
+	public static int getSize(Node root)
+	{
+	    ArrayList<Integer> al=new ArrayList<Integer>();
+	    int size=count(root,al);
+	    return size;
+    }
+    public static int count(Node root,ArrayList<Integer> al){
+        if(root==null){
+            return al.size();
+        }
+        else{
+            al.add(root.data);
+            count(root.left,al);
+            count(root.right,al);
+            return al.size();
+        }
+    }
+}
