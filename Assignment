@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class Assignment{
+    static int fib(int n){
+    /* Declare an array to store Fibonacci numbers. */
+    int f[] = new int[n+2]; // 2 extra to handle case, n = 1 and n = 2
+      
+    /* 1th and 2nd number of the series are 0 and 1 respectively*/
+    f[1] = 0;
+    f[2] = 1;
+     
+    for (int i = 3; i <= n; i++)
+    {
+       /* Add the previous 2 numbers in the series
+         and store it */
+        f[i] = f[i-1] + f[i-2];
+    }
+
+    //this will return the nth number of fibonacci series
+    return f[n];
+    }
+      
+    public static void main (String args[])
+    {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the nth number of the series:-");
+        int input=sc.nextInt();
+        System.out.println("fib(n)= "+fib(input));
+    }
+}
+
